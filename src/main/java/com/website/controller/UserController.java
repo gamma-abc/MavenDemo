@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -17,7 +18,7 @@ public class UserController {
     @RequestMapping("/QueryUser")
     public String toIndex(MockHttpServletRequest request , Model model){
         int userId=Integer.parseInt(request.getParameter("id"));
-        User user=this.userService.getUserById(userId);
+        List<User> user=this.userService.getUserById(userId);
         model.addAttribute("user",user);
         return "User";
     }

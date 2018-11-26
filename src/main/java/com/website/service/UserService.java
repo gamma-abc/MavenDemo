@@ -7,7 +7,7 @@ import java.util.List;
 
 public class UserService {
     private UserDao userDao;
-    public User getUserById(int userId){
-        return userDao.getUserById(int userId);
+    public List<User> getUserById(int userId){
+        return userDao.getUserById(userId);
     }
 }
